@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.env
+.env.*
+**/node_modules/
+**/dist/
+**/.next/
+**/.turbo/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock

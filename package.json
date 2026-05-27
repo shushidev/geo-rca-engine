@@ -1,0 +1,19 @@
+{
+  "name": "geo-rca-engine",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "services/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:backend": "npm --workspace @geo-rca-engine/backend run start:dev",
+    "dev:frontend": "npm --workspace @geo-rca-engine/frontend run dev",
+    "dev": "npm run dev:backend",
+    "build": "npm --workspaces run build",
+    "start": "npm --workspace @geo-rca-engine/backend run start"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}
