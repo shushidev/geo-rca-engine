@@ -6,6 +6,7 @@ import { validateEnv } from './config/env.validation';
 import { DbModule } from './db/db.module';
 import { GeoController } from './geo/geo.controller';
 import { GeoService } from './geo/geo.service';
+import { IngestionModule } from './ingestion/ingestion.module';
 
 @Module({
   imports: [
@@ -14,7 +15,8 @@ import { GeoService } from './geo/geo.service';
       envFilePath: ['.env', '../../.env'],
       validate: validateEnv
     }),
-    DbModule
+    DbModule,
+    IngestionModule
   ],
   controllers: [AppController, GeoController],
   providers: [AppService, GeoService]
