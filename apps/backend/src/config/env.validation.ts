@@ -1,5 +1,5 @@
 import { plainToInstance } from 'class-transformer';
-import { IsString, IsUrl, validateSync } from 'class-validator';
+import { IsIn, IsOptional, IsString, IsUrl, validateSync } from 'class-validator';
 
 class EnvironmentVariables {
   @IsString()
@@ -31,6 +31,14 @@ class EnvironmentVariables {
     require_tld: false
   })
   NEXT_PUBLIC_API_BASE_URL!: string;
+
+  @IsOptional()
+  @IsIn(['development', 'staging', 'production', 'test'])
+  APP_ENVIRONMENT?: string;
+
+  @IsOptional()
+  @IsIn(['true', 'false'])
+  DATABASE_SSL?: string;
 }
 
 export function validateEnv(config: Record<string, unknown>) {

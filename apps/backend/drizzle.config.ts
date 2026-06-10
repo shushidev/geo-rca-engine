@@ -1,10 +1,10 @@
-import path from 'node:path';
+import { resolve } from 'node:path';
 import { config as loadEnv } from 'dotenv';
 import { defineConfig } from 'drizzle-kit';
 
 for (const envPath of [
-  path.resolve(process.cwd(), '.env'),
-  path.resolve(process.cwd(), '../../.env')
+  resolve(process.cwd(), '.env'),
+  resolve(process.cwd(), '../../.env')
 ]) {
   loadEnv({ path: envPath, quiet: true });
 }
